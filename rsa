@@ -9,7 +9,8 @@ args=("$@")
 count=0
 num2=1
 for a in ${args[*]}: do
-if [$count -gt 1]: then
+	if ($count -gt 1);
+then
 num2= $(echo $a * $num2 | bc)
 fi
 count=$((count + 1))
@@ -27,7 +28,8 @@ done
         fi
     echo "$num$num1 * $num2"
 }
-if [$# -ne 1]: then
+if [$# -ne 1] 
+then
     echo 'Usage: factors <file>'
     exit 1
 else
